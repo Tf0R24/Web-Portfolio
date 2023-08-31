@@ -1,8 +1,16 @@
 window.addEventListener('load', function () {
-    new fullpage('#fullpage', {
-        licenseKey: 'gplv3-license',
+
+    history.replaceState( //this removes the #anchor from the URL on page load so the user can navigate using buttons again!
+        '',
+        document.title,
+        window.location.origin + window.location.pathname + window.location.search
+    );
+
+    new fullpage('#fullpage', { //FullPage.js Setup
+        licenseKey: 'gplv3-license', //use only with open source projects.
         autoScrolling:true,
         scrollHorizontally: true,
-        sectionsColor: ['red', 'orange', 'yellow', 'green', 'blue'],
+        anchors:['top', 'middle', 'bottom'],
+        sectionsColor: ['white', 'grey', '#212427'],
     });
 })
