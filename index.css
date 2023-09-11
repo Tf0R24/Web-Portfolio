@@ -40,12 +40,12 @@
 
 .arrow span {
     display: block;
-    width: 1.5vw;
-    height: 1.5vw;
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
+    width: 2vw;
+    height: 2vw;
+    border-bottom: 5px solid yellow;
+    border-right: 5px solid black;
     transform: rotate(45deg);
-    animation: animate 2s infinite;
+    animation: animate 3s infinite;
 }
 .arrow span:nth-child(2) {
     animation-delay: -0.2s;
@@ -75,4 +75,123 @@
         opacity: 0;
         transform: rotate(45deg) translate(20px, 20px);
     }
+}
+
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.aboutFooter{
+    
+}
+
+.socialImage{
+    width: 2vw;
+    height: 2vw;
+    margin-right: 0.5vw;
+}
+
+.socialLink{
+    font-size: 2.5vw;
+    text-decoration: none;
+    margin: 0.5vw;
+}
+
+.socialLink:link{
+    color: #00000F
+}
+
+.socialLink:visited{
+    color: #7D7D7D;
+}
+
+.socialLink:hover{
+    color: #7D7D7D;
+}
+
+.heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headingTitle{
+    color: #fffdfa;
+}
+
+.bottomContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.tileHolder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameTile{
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 1vw;
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.gameTileImage{
+    border-radius: 52px;
+}
+
+.gameTileInner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 52px;
+}
+
+.gameTile:hover .gameTileInner{
+    transform: rotateY(180deg);
+}
+
+.gameTileFront, .gameTileBack{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 52px;
+}
+
+.gameTileFront{
+  background-color: #bbb;
+  color: black;
+}
+
+.gameTileBack{
+  background-color: #7D7D7D;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.gameTileHeading{
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    padding: 1vh;
+}
+
+.gameTileDesc{
+    padding: 1vh;
 }

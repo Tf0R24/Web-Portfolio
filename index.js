@@ -11,6 +11,6 @@ window.addEventListener('load', function () {
         autoScrolling:true,
         scrollHorizontally: true,
         anchors:['top', 'middle', 'bottom'],
-        sectionsColor: ['white', 'grey', '#212427'],
+        sectionsColor: ['#fffff1', 'grey', '#212427'],
     });
 })
