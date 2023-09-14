@@ -42,10 +42,10 @@
     display: block;
     width: 2vw;
     height: 2vw;
-    border-bottom: 5px solid yellow;
-    border-right: 5px solid black;
+    border-bottom: 5px solid #d67754;
+    border-right: 5px solid #d67754;
     transform: rotate(45deg);
-    animation: animate 3s infinite;
+    animation: arrowAnimation 3s infinite;
 }
 .arrow span:nth-child(2) {
     animation-delay: -0.2s;
@@ -63,7 +63,7 @@
     animation-delay: -1.0s;
 }
 
-@keyframes animate {
+@keyframes arrowAnimation {
     0% {
         opacity: 0;
         transform: rotate(45deg) translate(-20px, -20px);
@@ -85,7 +85,8 @@
 }
 
 .aboutFooter{
-    
+    display: flex;
+    justify-content: flex-end;
 }
 
 .socialImage{
@@ -98,7 +99,36 @@
     font-size: 2.5vw;
     text-decoration: none;
     margin: 0.5vw;
+    background-image: linear-gradient(
+        to right,
+        #00000F,
+        #00000F 50%,
+        #7D7D7D 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
+
+.socialLink:before {
+    content: '';
+    background: #54b3d6;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
 
 .socialLink:link{
     color: #00000F
@@ -109,7 +139,12 @@
 }
 
 .socialLink:hover{
+    background-position: 0;
     color: #7D7D7D;
+}
+
+.socialLink:hover::before{
+    width: 100%;
 }
 
 .heading{
@@ -127,16 +162,20 @@
     flex-direction: column;
     align-items: center;
     align-content: center;
-    justify-content: space-between;
     flex-wrap: wrap;
     height: 100vh;
 }
 
 .tileHolder{
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
 }
 
 .gameTile{
@@ -194,4 +233,86 @@
 
 .gameTileDesc{
     padding: 1vh;
+}
+
+/* animations */
+
+.slideLeft{
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-duration: 1600ms;
+    animation-name: slideLeft;
+    display: inline-block;
+}
+
+.slideRight{
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-duration: 1600ms;
+    animation-name: slideRight;
+    display: inline-block;
+}
+
+.slideUpLeft{
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-duration: 1600ms;
+    animation-name: slideUpLeft;
+    display: inline-block;
+}
+
+.slideUpRight{
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-duration: 1600ms;
+    animation-name: slideUpRight;
+    display: inline-block;
+}
+
+@keyframes slideLeft {
+    0%{
+        visibility: visible;
+        transform: translate3d(100px, 0px, 0px);
+    }
+
+    100%{
+        visibility: visible;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+@keyframes slideRight {
+    0%{
+        visibility: visible;
+        transform: translate3d(-100px, 0px, 0px);
+    }
+
+    100%{
+        visibility: visible;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+@keyframes slideUpLeft {
+    0%{
+        visibility: visible;
+        transform: translate3d(100px, 100px, 0px);
+    }
+
+    100%{
+        visibility: visible;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+@keyframes slideUpRight {
+    0%{
+        visibility: visible;
+        transform: translate3d(-100px, 100px, 0px);
+    }
+
+    100%{
+        visibility: visible;
+        transform: translate3d(0px, 0px, 0px);
+    }
 }
